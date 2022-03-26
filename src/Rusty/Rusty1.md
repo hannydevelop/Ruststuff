@@ -2,7 +2,7 @@
 
 Rust is an amazing programming language that allows developers build efficient tools. Rust provides a tool for creating documentation or anything that requires a clean, easily navigable presentation called [mdbook](https://rust-lang.github.io/mdBook/).
 
-[Attach cover photo here]
+![Cover Image](images/cover1.png)
 
 Mdbook is a [static site generator](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/), it generates books from markdown files. This is interesting, because markdown is light-weight, less cumbersome to write, read and edit.
 
