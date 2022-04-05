@@ -18,8 +18,6 @@ A proper documentation should go straight to the point, it should answer the que
 
 ![Cover Image](images/netlify5.png)
 
-[Attach an Image showing arroes of search botton and navbar]
-
 ## Installing and Setting-up Mdbook
 
 Installing mdbook is the first step to get started with generating documentation for your product. To install mdbook, you first need to have [Rust installed](https://www.rust-lang.org/tools/install) in your working environment. Now, run the command below, to install mdbook.
