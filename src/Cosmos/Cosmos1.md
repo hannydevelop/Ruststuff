@@ -22,3 +22,5 @@ The consensus engine which is also known as a state-machine replication engine, 
 
 ## How does the ABCI work?
 
+Applications can run either within the same process as the Tendermint state-machine replication engine, or as a separate process from the state-machine replication engine. When run within the same process, Tendermint will call the application methods directly as Go method calls.
+When Tendermint and the application are run as separate processes, Tendermint opens four connections to the application for ABCI methods.
