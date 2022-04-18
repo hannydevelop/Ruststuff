@@ -41,6 +41,17 @@ As we go further in this series, we'll explore validators in details.
 
 The core of Tendermint, is built around consensus. In this section, we'll explore consensus in the chain, starting from the validators, menpool, persistent peers and tx.
 
+The mempool is a in memory pool of potentially valid transactions, both to broadcast to other nodes, as well as to provide to the consensus reactor when it is selected as the block proposer. There are two sides to the mempool state, the external which receives, checks, and broadcast new transactions and the internal which returns valid transaction, update list after block commit.
+
+Two stages of validator voting are required to successfully commit a block; we call them pre-vote and pre-commit. A block is committed when more than 2/3 of validators pre-commit for the same block in the same round. Evidence is used to identify validators who have or are acting malicious.
+
+The evidence reactor works similar to the mempool reactor. When evidence is observed, it is sent to all the peers in a repetitive manner. This ensures evidence is sent to as many people as possible to avoid sensoring. After evidence is received by peers and committed in a block it is pruned from the evidence module.
+
+Sending incorrectly encoded data or data exceeding maxMsgSize will result in stopping the peer. Peers help with consensus, for instance, the persistent peers are peers you'll always want to be connected to, If you disconnect you will try to connect directly back to them as opposed to using another address from the address book.
+
+Tendermint allows faster synching of chain. For example, the Tendermint daemon will sync hundreds of times faster when using the `block sync` than if it used the real-time consensus process. Once caught up, the daemon will switch out of Block Sync and into the normal consensus mode. After running for some time, the node is considered caught up if it has at least one peer and it's height is at least as high as the max reported peer height.
+
+However, the `State sync` reactor allows new nodes to rapidly bootstrap and join the network by discovering, fetching, and restoring state machine snapshots. 
 
 
 ## Conclusion
