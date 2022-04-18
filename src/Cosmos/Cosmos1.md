@@ -1,8 +1,10 @@
 # Cosmos Terms I wish I understood Earlier
 
-Cosmos is a decentralized network of independent parallel blockchains. While we'll not be exploring the history of the [Cosmos network](https://cosmos.network/), it'll be better to understand it's structure. The Cosmos network is an ecosystem of independent interconnected blockchains built using developer-friendly application components and connected with ground-breaking [IBC (Inter-Blockchain Communication)]() protocol.
+Cosmos is a decentralized network of independent parallel blockchains. While we'll not be exploring the history of the [Cosmos network](https://cosmos.network/), it'll be better to understand it's structure. The Cosmos network is an ecosystem of independent interconnected blockchains built using developer-friendly application components and connected with ground-breaking [IBC (Inter-Blockchain Communication)](https://ibcprotocol.org/) protocol.
 
-For instance, to build a chain in the Cosmos ecosystem, developers need to use the Cosmos SDK. These chains are quite different from other blockchain technologies like Bitcoin and Ethereum. For example, the structure of this technology includes a general purpose blockchain consensus engine that can host arbitrary application states. This consensus engine is [Tendermint's]() Core.
+For instance, to build a chain in the Cosmos ecosystem, developers need to use the Cosmos SDK. These chains are quite different from other blockchain technologies like Bitcoin and Ethereum. For example, the structure of this technology includes a general purpose blockchain consensus engine that can host arbitrary application states. This consensus engine is [Tendermint's](https://tendermint.com/) Core.
+
+![Cover Image](images/cover.png)
 
 In this article, we'll be exploring the Cosmos network, how's different from other blockchain technologies as well as terms I wish I understood earlier.
 
@@ -56,7 +58,7 @@ However, the `State sync` reactor allows new nodes to rapidly bootstrap and join
 
 ## Conclusion
 
-In this article, we've explored what a Cosmos chain constitutes. We've explored what Tendermint is all about, as well as how the ABCI application, end-user application and the consensus engine all communicate.
+In this article, we've explored what a Cosmos constitutes. We've explored what Tendermint is all about, as well as how the ABCI application, end-user application and the consensus engine all communicate.
 Although the whole Tendermint idea is for developers to easily customize their distribution ledger and building blockchains from scratch, it can quickly become overwhelming for engineers to do. Especially, if they'll want a small tweak to the application logic or how the end-user interacts with their product.
 
 For this reason, developers can bootstrap their chains in three steps, using [Cosmos SDK](https://v1.cosmos.network/sdk). Cosmos sdk is a framework for building application-specific blockchains, utilizing Tendermint's consensus engine. To do this, developers will create a fork of a Cosmos sdk application and customize it to suit their needs.
