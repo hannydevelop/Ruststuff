@@ -29,9 +29,16 @@ However, when Tendermint and the application are run as separate processes, Tend
 For the purpose of this article, "ABCI application" refers to the logic that actually runs on the blockchain. While, the "end-user application" refers to a wallet or an app that the user downloads/interacts with. The Transactions sent by an end-user application are ultimately processed by the ABCI application.
 
 ## Validators, who are they?
+Proof of Work (POW) uses a competitive validation method to confirm transactions and add new blocks to the blockchain. This method involves vast, decentralized networks of computers around the world that verify and secure the virtual ledgers that document cryptocurrency transactions. However, this network requires a huge amount of processing power. It is an energy-intensive process that can have trouble scaling to accommodate vast number of transactions.
 
+To solve this problem, Tendermint's consensus algorithm utilizes Proof of Stake. Stakeholders who are called Validators are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key. In some Proof-of-Stake consensus algorithm, there's a completely decentralized system where all stakeholders (even those who are not always available online) participate in the committing of blocks.
+
+However, this is different in Tendermint. Validators are expected to be online, and the set of validators is permissioned/curated by some external process. Validators have a cryptographic key-pair and an associated amount of "voting power". Voting power need not be the same.
+
+As we go further in this series, we'll explore validators in details.
 
 ## Putting all pieces together
+
 
 
 ## Conclusion
