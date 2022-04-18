@@ -47,7 +47,7 @@ Two stages of validator voting are required to successfully commit a block; we c
 
 The evidence reactor works similar to the mempool reactor. When evidence is observed, it is sent to all the peers in a repetitive manner. This ensures evidence is sent to as many people as possible to avoid sensoring. After evidence is received by peers and committed in a block it is pruned from the evidence module.
 
-Sending incorrectly encoded data or data exceeding maxMsgSize will result in stopping the peer. Peers help with consensus, for instance, the persistent peers are peers you'll always want to be connected to, If you disconnect you will try to connect directly back to them as opposed to using another address from the address book.
+Sending incorrectly encoded data or data exceeding maxMsgSize will result in stopping the peer. The persistent peers are peers you'll always want to be connected to, If you disconnect you will try to connect directly back to them as opposed to using another address from the address book.
 
 Tendermint allows faster synching of chain. For example, the Tendermint daemon will sync hundreds of times faster when using the `block sync` than if it used the real-time consensus process. Once caught up, the daemon will switch out of Block Sync and into the normal consensus mode. After running for some time, the node is considered caught up if it has at least one peer and it's height is at least as high as the max reported peer height.
 
@@ -61,7 +61,7 @@ Although the whole Tendermint idea is for developers to easily customize their d
 
 For this reason, developers can bootstrap their chains in three steps, using [Cosmos SDK](https://v1.cosmos.network/sdk). Cosmos sdk is a framework for building application-specific blockchains, utilizing Tendermint's consensus engine. To do this, developers will create a fork of a Cosmos sdk application and customize it to suit their needs.
 
-To build a Blockchain application quickly, developers can utilize [ignite-cli](). Ignite CLI which was formally starport, allows developers to create a blockchain application using Cosmos SDK and Tendermint. It also serves the blockchain application to the web, using HTTP/HTTPS protocol. Follow the next article, where we explore Cosmos SDK modules while building our own blockchain.
+To build a Blockchain application quickly, developers can utilize [ignite-cli](https://github.com/ignite-hq/cli). Ignite CLI which was formally starport, allows developers to create a blockchain application using Cosmos SDK and Tendermint. It also serves the blockchain application to the web, using HTTP/HTTPS protocol. Follow the next article, where we explore Cosmos SDK modules while building our own blockchain.
 
 
 
