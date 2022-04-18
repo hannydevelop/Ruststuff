@@ -1,10 +1,10 @@
 # Cosmos Terms I wish I understood Earlier
 
+![Cover Image](images/cover.png)
+
 Cosmos is a decentralized network of independent parallel blockchains. While we'll not be exploring the history of the [Cosmos network](https://cosmos.network/), it'll be better to understand it's structure. The Cosmos network is an ecosystem of independent interconnected blockchains built using developer-friendly application components and connected with ground-breaking [IBC (Inter-Blockchain Communication)](https://ibcprotocol.org/) protocol.
 
 For instance, to build a chain in the Cosmos ecosystem, developers need to use the Cosmos SDK. These chains are quite different from other blockchain technologies like Bitcoin and Ethereum. For example, the structure of this technology includes a general purpose blockchain consensus engine that can host arbitrary application states. This consensus engine is [Tendermint's](https://tendermint.com/) Core.
-
-![Cover Image](images/cover.png)
 
 In this article, we'll be exploring the Cosmos network, how's different from other blockchain technologies as well as terms I wish I understood earlier.
 
