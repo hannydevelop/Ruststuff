@@ -39,6 +39,8 @@ As we go further in this series, we'll explore validators in details.
 
 ## Putting all pieces together
 
+The core of Tendermint, is built around consensus. In this section, we'll explore consensus in the chain, starting from the validators, menpool, persistent peers and tx.
+
 
 
 ## Conclusion
