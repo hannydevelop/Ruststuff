@@ -85,7 +85,7 @@ Load balancing is an important feature in programming. It involves efficiently d
 
 Since gRPC utilizes HTTP/2, there’s a possibility of a lack of load balancing since HTTP/2 multiplexes multiple calls on a single TCP connection. Developers can implement a client-side load balancing. With this method, the client knows of each endpoint. Therefore, each gRPC call selects a different endpoint to send the call to. An example of this is utilizing `ginepro` – an add-on to `tonic's Channel` which provides service discovery to perform client-side look-aside gRPC load balancing.  
 
-```
+```rust
 // Using the `LoadBalancedChannel`.
 use ginepro::LoadBalancedChannel;
 use ginepro::pb::tester_client::TesterClient;
