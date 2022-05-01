@@ -1,4 +1,5 @@
 # GRPC Best Practices With Rust
+![Cover Image](images/cover2.png)
 
 In recent years, microservices are the most desired architecture among developers. This is because it’s easier to maintain this type of architecture when the code base becomes very large. However, for smaller IT firms, the monolith architecture is the most suited architecture. This way, it’s easier to organize all of their codes together in one place.
 
