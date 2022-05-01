@@ -109,7 +109,12 @@ Another method of implementing load balancing in a streaming gRPC call is the us
 ### Connection Concurrency
 A concurrent connection means the maximum number of connections your server can handle at a time. Applications with high load, or long-running streaming gRPC calls, could see performance issues due to queuing calls. This happens when the number of active calls reaches the connection stream limit.
 
-To solve this problem, developers can enable multiple HTTP/2 connections to create more connections for their calls and avoid queuing.
+To solve this problem, developers can enable multiple HTTP/2 connections to create more connections for their calls and avoid queuing. Another method is increasing the max concurrent stream. For example `grpcio` provides this method:
+
+```rust
+pub fn max_concurrent_stream(self, num: i32) -> ChannelBuilder
+```
+
 
 ## Conclusion
 In this article, we have explored gRPC and the best practices to have in mind when working with the gRPC framework in Rust. While gRPC allows developers to generate interface designs with any language of their choice, it isn’t a bed of roses.
