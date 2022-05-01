@@ -22,7 +22,7 @@ Tonic is a Rust implementation of gRPC. It comprises three main components: the 
 
 To start with the Tonic crate, add this library to your `cargo.toml` file.
 
-```
+```toml
 tonic = "0.7.1"
 ```
 Next, write your proto, build them and provide your client and server program. Tonic provides TLS support, custom metadata, authentication, and health checking.
@@ -30,7 +30,7 @@ Next, write your proto, build them and provide your client and server program. T
 ### [gRPC-Rust](https://crates.io/crates/grpc)
 This is another Rust implementation of the gRPC model. However, this crate is still under development and isn’t suitable for use in production. To use this crate in your project, add it to the dependencies section of your `cargo.toml` file.
 
-```
+```toml
 grpc = "0.8.3"
 ```
 
@@ -42,29 +42,29 @@ gRPCio is a Rust wrapper of gRPC. Although this crate is still under development
 
 To use this crate in your application, add it to the dependency section of your `cargo.toml` file:
 
-```
+```toml
 grpcio = "0.10.2"
 ```
 You can also generate sources from `.proto` files manually.  To do this, follow the steps below:
 
 Install protobuf compiler
 
-```
+```shell
 cargo install protobuf-codegen
 ```
 Install gRPC compiler
 
-```
+```shell
 cargo install grpcio-compiler
 ```
 Generate sources
 
-```
+```shell
 protoc --rust_out=. --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_rust_plugin` example.proto
 ```
 This crate, uses `boringssl` by default to enables support for TLS encryption and some authentication mechanism. You can disable this feature when you don’t need it, by disabling default features.
 
-```
+```toml
 [dependencies]
 grpcio = { version = "0.10.2", default-features = false, features = ["protobuf-codec"] }
 ```
@@ -76,7 +76,7 @@ In programming, multiplexing involves the use of a single in-memory resource to 
 
 For instance, the code below is a better practice since we’re using the same channel instead of shutting it down and restarting another for each call:
 
-```
+```rust
 
 ```
 gRPC channels are safe to share and reuse between calls. 
@@ -116,4 +116,4 @@ In this article, we have explored gRPC and the best practices to have in mind wh
 
 For instance, there’s a lack of support for additional content types. For example, other content types like image uploads are not supported out-of-the-box as with standard HTTP + REST-based APIs.
 
-Nevertheless, gRPC is a great fit for teams who have worked on the traditional RPC model and need to spice things like performance up. If you want to learn more about gRPC, the [official documentation site](https://grpc.io/docs/guides/performance/) is a great fit for you.
+Nevertheless, gRPC is a great fit for teams who have worked on the traditional RPC model and need to spice things like performance up. If you want to learn more about gRPC, the [official documentation site](https://grpc.io/docs/guides/performance/) is a great.
