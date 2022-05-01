@@ -2,13 +2,13 @@
 
 In recent years, microservices are the most desired architecture among developers. This is because it’s easier to maintain this type of architecture when the code base becomes very large. However, for smaller IT firms, the monolith architecture is the most suited architecture. This way, it’s easier to organize all of their codes together in one place.
 
-Whether monolith or microservice architecture, there’s a need for the application’s backend/server to communicate with its client/front-end. This is exactly what gRPC does. gRPC is an (API (Application Programming Interface))[https://en.wikipedia.org/wiki/API] framework that allows communication between a program in one location on the internet to another program at another location on the internet for processing. In this article, we’ll explore gRPC in Rust, and the best practices to incorporate into your application when using gRPC.
+Whether monolith or microservice architecture, there’s a need for the application’s backend/server to communicate with its client/front-end. This is exactly what gRPC does. gRPC is an [API (Application Programming Interface)](https://en.wikipedia.org/wiki/API) framework that allows communication between a program in one location on the internet to another program at another location on the internet for processing. In this article, we’ll explore gRPC in Rust, and the best practices to incorporate into your application when using gRPC.
 
 ## What Is gRPC
 
-gRPC stands for Google Remote Procedure Call. It is an improvement to the traditional (RPC model)[https://en.wikipedia.org/wiki/Remote_procedure_call], projected as the next generation of the RPC infrastructure. This open-source model is initially built by Google. Just like in many RPC models, the gRPC model involves the definition of a service, specifying the service methods that can be called remotely with their parameters and return types. The gRPC server handles client calls, while the client consists of a stub that provides the same methods as the server.
+gRPC stands for Google Remote Procedure Call. It is an improvement to the traditional [RPC model](https://en.wikipedia.org/wiki/Remote_procedure_call), projected as the next generation of the RPC infrastructure. This open-source model is initially built by Google. Just like in many RPC models, the gRPC model involves the definition of a service, specifying the service methods that can be called remotely with their parameters and return types. The gRPC server handles client calls, while the client consists of a stub that provides the same methods as the server.
 
-gRPC has major advantages when compared to the traditional RPC model. For instance, it uses (Protocol Buffers)[https://en.wikipedia.org/wiki/Protocol_Buffers] as its (interface definition language)[https://en.wikipedia.org/wiki/Interface_description_language]. This allows developers to work across languages and platforms. gRPC also utilizes the concurrent communication capabilities of (HTTP/2)[https://en.wikipedia.org/wiki/HTTP/2] to allow multiple requests from multiple clients and it offers load balancing. It also uses the request-response structure to serve these requests one at a time.
+gRPC has major advantages when compared to the traditional RPC model. For instance, it uses [Protocol Buffers](https://en.wikipedia.org/wiki/Protocol_Buffers) as its [interface definition language](https://en.wikipedia.org/wiki/Interface_description_language). This allows developers to work across languages and platforms. gRPC also utilizes the concurrent communication capabilities of [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) to allow multiple requests from multiple clients and it offers load balancing. It also uses the request-response structure to serve these requests one at a time.
 
 In the next session, we’ll be exploring the different gRPC crates in Rust.
 
@@ -16,8 +16,8 @@ In the next session, we’ll be exploring the different gRPC crates in Rust.
 
 The Rust programming language is notably still in its early stages. However, the Rust community has developed many gRPC implementations. In this section, we’ll explore these implementations.
 
-### Tonic: 
-Tonic is a Rust implementation of gRPC. It comprises three main components: the generic gRPC implementation, the high-performance HTTP/2 implementation, and the codegen powered by prost. Prost is a protocol buffer implementation for Rust, which allows developers to write interface definitions that’ll generate Rust codes.
+### [Tonic](https://crates.io/crates/tonic): 
+Tonic is a Rust implementation of gRPC. It comprises three main components: the generic gRPC implementation, the high-performance HTTP/2 implementation, and the codegen powered by [prost](https://github.com/tokio-rs/prost). Prost is a protocol buffer implementation for Rust, which allows developers to write interface definitions that’ll generate Rust codes.
 
 To start with the Tonic crate, add this library to your `cargo.toml` file.
 
@@ -26,16 +26,16 @@ tonic = "0.7.1"
 ```
 Next, write your proto, build them and provide your client and server program. Tonic provides TLS support, custom metadata, authentication, and health checking.
 
-### gRPC-Rust
+### [gRPC-Rust](https://crates.io/crates/grpc)
 This is another Rust implementation of the gRPC model. However, this crate is still under development and isn’t suitable for use in production. To use this crate in your project, add it to the dependencies section of your `cargo.toml` file.
 
 ```
 grpc = "0.8.3"
 ```
 
-Next, you can proceed to generate Rust codes from your proto files by invoking protoc with the protoc-rust-grpc crate or with the protoc command and protoc-gen-rust-grpc plugin.
+Next, you can proceed to generate Rust codes from your proto files by invoking protoc with the [protoc-rust-grpc crate](https://github.com/stepancheg/grpc-rust/tree/master/protoc-rust-grpc) or with the protoc command and protoc-gen-rust-grpc plugin.
 
-### gRPCio
+### [gRPCio](https://crates.io/crates/grpcio)
 
 gRPCio is a Rust wrapper of gRPC. Although this crate is still under development, it supports SSL, generic calls, connection level compression, interoperability test, 		QPS benchmark as well as authentication and health check.
 
@@ -103,7 +103,7 @@ let load_balanced_channel = LoadBalancedChannel::builder(
 let grpc_client = TestClient::new(load_balanced_channel);
 ```
 
-Another method of implementing load balancing in a streaming gRPC call is the use of a proxy like ARLB.
+Another method of implementing load balancing in a streaming gRPC call is the use of a proxy like [ARLB](https://github.com/another-rust-load-balancer/another-rust-load-balancer#:~:text=ARLB%20%28Another%20Rust%20Load%20Balancer%29%20is%20a%20reverse,merely%20a%20proof%20of%20concept%20and%20university%20project.).
 
 ### Connection Concurrency
 A concurrent connection means the maximum number of connections your server can handle at a time. Applications with high load, or long-running streaming gRPC calls, could see performance issues due to queuing calls. This happens when the number of active calls reaches the connection stream limit.
@@ -115,4 +115,4 @@ In this article, we have explored gRPC and the best practices to have in mind wh
 
 For instance, there’s a lack of support for additional content types. For example, other content types like image uploads are not supported out-of-the-box as with standard HTTP + REST-based APIs.
 
-Nevertheless, gRPC is a great fit for teams who have worked on the traditional RPC model and need to spice things like performance up. If you want to learn more about gRPC, the official documentation site is a great fit for you.
+Nevertheless, gRPC is a great fit for teams who have worked on the traditional RPC model and need to spice things like performance up. If you want to learn more about gRPC, the [official documentation site](https://grpc.io/docs/guides/performance/) is a great fit for you.
